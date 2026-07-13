@@ -123,6 +123,8 @@ export const serviceAreas = {
     "Port Broughton",
     "Tickera",
     "Arthurton",
+    "Agery",
+    "North Beach",
   ],
   note: "Not sure whether your property is within the service area? Send the job address through the quote form and AL can confirm availability and any applicable travel cost.",
 } as const;
