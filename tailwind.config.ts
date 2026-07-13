@@ -13,11 +13,12 @@ const config: Config = {
         // trailer, business card, Facebook banner and logo artwork.
         brand: {
           orange: "#E85A00", // Primary orange
-          bright: "#FF7200", // Bright orange accent
-          black: "#090909", // Near-black
+          bright: "#FF7A00", // Bright orange accent (refined from brand review)
+          "orange-deep": "#B83D00", // Deep orange for pricing gradient
+          black: "#0C0C0C", // Near-black
           charcoal: "#171717", // Charcoal panels
           cream: "#FFF7E8", // Warm cream backgrounds
-          sand: "#E8C78F", // Light sand
+          sand: "#D99535", // Warm gold sand (refined from brand review)
           brown: "#6F6456", // Muted brown-grey
         },
       },

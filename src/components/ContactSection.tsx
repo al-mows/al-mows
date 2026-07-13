@@ -45,7 +45,10 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="quote" className="scroll-mt-20 bg-brand-black py-16 sm:py-20 lg:py-24">
+    <section
+      id="quote"
+      className="scroll-mt-20 border-t-[6px] border-brand-orange bg-brand-black py-16 sm:py-20 lg:py-24"
+    >
       <div className="mx-auto max-w-content px-4 sm:px-6">
         <SectionHeading
           eyebrow="Get in touch"

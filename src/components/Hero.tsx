@@ -6,9 +6,12 @@ const trustIcons = [MapPin, UserRound, Ruler, MapPin];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative isolate overflow-hidden bg-brand-black">
-      {/* Background artwork (Facebook banner / trailer). Decorative — the
-          heading text below carries the information, so alt is empty. */}
+    <section
+      id="home"
+      className="relative isolate overflow-hidden border-b-[6px] border-brand-orange bg-brand-black"
+    >
+      {/* Background artwork (Facebook banner). Decorative — the heading text
+          below carries the information, so alt is empty. */}
       <div className="absolute inset-0 -z-10">
         <BrandImage
           src="/images/al-mows-facebook-banner.png"
@@ -17,14 +20,23 @@ export default function Hero() {
           priority
           sizes="100vw"
           placeholderLabel="Banner image to be added"
-          className="object-cover object-center opacity-40"
+          className="object-cover object-[58%_center]"
         />
+        {/* Directional dark gradient: nearly opaque on the left for text
+            legibility, clearing on the right so the artwork shows through. */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/40"
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(12,12,12,0.94) 0%, rgba(12,12,12,0.82) 38%, rgba(12,12,12,0.34) 72%, rgba(12,12,12,0.08) 100%)",
+          }}
           aria-hidden
         />
+        {/* Extra darkening on small screens where text spans full width. */}
+        <div className="absolute inset-0 bg-brand-black/45 md:hidden" aria-hidden />
+        {/* Bottom vignette for depth. */}
         <div
-          className="absolute inset-x-0 bottom-0 h-3 brand-stripes"
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-black/70 to-transparent"
           aria-hidden
         />
       </div>

@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import PricingSection from "@/components/PricingSection";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import BrandBanner from "@/components/BrandBanner";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import MobileActionBar from "@/components/MobileActionBar";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <ServiceAreaSection />
         <PricingSection />
         <BeforeAfterGallery />
+        <BrandBanner />
         <ContactSection />
       </main>
       <Footer />

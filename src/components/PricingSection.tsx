@@ -16,15 +16,15 @@ export default function PricingSection() {
           {pricingTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`flex flex-col rounded-xl border-2 p-6 transition-colors ${
+              className={`flex flex-col rounded-xl border-2 p-6 shadow-card transition-colors ${
                 tier.negotiated
-                  ? "border-brand-black bg-brand-black text-brand-cream"
+                  ? "border-brand-orange-deep bg-gradient-to-br from-brand-orange to-brand-orange-deep text-white"
                   : "border-brand-sand/70 bg-white"
               }`}
             >
               <div className="flex items-center gap-2">
                 {tier.negotiated ? (
-                  <Handshake className="h-5 w-5 text-brand-bright" aria-hidden />
+                  <Handshake className="h-5 w-5 text-white" aria-hidden />
                 ) : (
                   <Check className="h-5 w-5 text-brand-orange" aria-hidden />
                 )}
@@ -38,7 +38,7 @@ export default function PricingSection() {
               </div>
               <p
                 className={`mt-4 font-heading text-2xl font-bold ${
-                  tier.negotiated ? "text-brand-bright" : "text-brand-orange"
+                  tier.negotiated ? "text-white" : "text-brand-orange"
                 }`}
               >
                 {tier.price}
