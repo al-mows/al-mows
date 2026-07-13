@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Globe } from "lucide-react";
 import Logo from "./Logo";
-import { business, navigation } from "@/data/business";
+import { business, navigation, credentials } from "@/data/business";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -88,8 +88,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-brand-sand">
-          <p>
+        <div className="mt-10 border-t border-white/10 pt-6 text-center">
+          <p className="text-xs text-brand-cream/80">
+            {credentials.join(" • ")}
+          </p>
+          <p className="mt-2 text-xs text-brand-sand">
             © {year} {business.name}. All rights reserved.
           </p>
         </div>

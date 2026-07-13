@@ -123,13 +123,13 @@ export default function QuoteForm() {
         setStatus("error");
         setServerMessage(
           data?.message ??
-            `Your request could not be sent. Please call Al on ${business.phoneDisplay}.`,
+            `Your request could not be sent. Please call AL on ${business.phoneDisplay}.`,
         );
       }
     } catch {
       setStatus("error");
       setServerMessage(
-        `Your request could not be sent. Please call Al on ${business.phoneDisplay}.`,
+        `Your request could not be sent. Please call AL on ${business.phoneDisplay}.`,
       );
     }
   };
@@ -146,14 +146,14 @@ export default function QuoteForm() {
         </h3>
         <p className="mt-2 text-brand-brown">{serverMessage}</p>
         <p className="mt-1 text-sm text-brand-brown">
-          Al will be in touch. Need to speak now?
+          AL will be in touch. Need to speak now?
         </p>
         <a
           href={business.phoneLink}
           className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-bright"
         >
           <Phone className="h-5 w-5" aria-hidden />
-          Call Al — {business.phoneDisplay}
+          Call AL — {business.phoneDisplay}
         </a>
         <button
           type="button"
@@ -272,7 +272,7 @@ export default function QuoteForm() {
           onChange={update("message")}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? "message-error" : "message-hint"}
-          placeholder="Tell Al about the property, the current land condition and what you need done."
+          placeholder="Tell AL about the property, the current land condition and what you need done."
           className={inputClass(!!errors.message)}
         />
         {errors.message ? (
@@ -350,7 +350,7 @@ export default function QuoteForm() {
           rows={3}
           value={values.notes}
           onChange={update("notes")}
-          placeholder="Access details, gates, obstacles, anything else Al should know."
+          placeholder="Access details, gates, obstacles, anything else AL should know."
           className={inputClass(false)}
         />
       </div>

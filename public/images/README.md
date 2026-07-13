@@ -1,6 +1,6 @@
 # Brand image assets
 
-Copy the supplied Al Mows Blocks artwork into this folder using these exact
+Copy the supplied AL Mows Blocks artwork into this folder using these exact
 filenames. The site references these paths directly — no code changes are
 needed once the files are in place. Until then, the site shows graceful
 labelled placeholders instead of broken images.

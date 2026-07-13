@@ -91,7 +91,7 @@ export default function MobileNavigation({
             className="flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-brand-bright px-4 py-3 text-lg font-bold text-brand-bright hover:bg-brand-bright hover:text-brand-black"
           >
             <Phone className="h-5 w-5" aria-hidden />
-            Call Al — {business.phoneDisplay}
+            Call AL — {business.phoneDisplay}
           </a>
         </div>
       </nav>

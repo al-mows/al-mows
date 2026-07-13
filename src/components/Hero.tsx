@@ -1,8 +1,17 @@
-import { Phone, ArrowRight, MapPin, UserRound, Ruler } from "lucide-react";
+import {
+  Phone,
+  ArrowRight,
+  MapPin,
+  UserRound,
+  Ruler,
+  ShieldCheck,
+  BadgeCheck,
+} from "lucide-react";
 import BrandImage from "./BrandImage";
 import { hero, business } from "@/data/business";
 
-const trustIcons = [MapPin, UserRound, Ruler, MapPin];
+// Icons align to the order of hero.trustSignals in src/data/business.ts.
+const trustIcons = [MapPin, ShieldCheck, BadgeCheck, UserRound, Ruler, MapPin];
 
 export default function Hero() {
   return (

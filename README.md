@@ -1,6 +1,6 @@
-# Al Mows Blocks — website
+# AL Mows Blocks — website
 
-Production website for **Al Mows Blocks**, a South Australian lawn mowing and
+Production website for **AL Mows Blocks**, a South Australian lawn mowing and
 paddock slashing business servicing the Copper Coast, Yorke Peninsula and
 surrounding districts.
 
@@ -53,7 +53,7 @@ Copy `.env.example` to `.env.local` and set:
 | `QUOTE_FROM_EMAIL`      | Verified "from" address, e.g. `quotes@almowsblocks.com.au`.         |
 
 The quote form still works without these set — the API returns a controlled
-error ("Your request could not be sent. Please call Al…") instead of crashing,
+error ("Your request could not be sent. Please call AL…") instead of crashing,
 so nothing breaks in preview environments.
 
 ### Resend configuration
@@ -73,7 +73,7 @@ Do **not** hard-code business details inside components.
 
 | What to change                          | File                        |
 | --------------------------------------- | --------------------------- |
-| Business details, hero copy, "How Al can help", service areas, nav labels | `src/data/business.ts` |
+| Business details, hero copy, "How AL can help", service areas, nav labels | `src/data/business.ts` |
 | Service cards                           | `src/data/services.ts`      |
 | Pricing tiers + disclaimer              | `src/data/pricing.ts`       |
 | Before/after gallery projects           | `src/data/gallery.ts`       |

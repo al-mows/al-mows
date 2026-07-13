@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Phone, Mail, MapPin, Facebook, Globe, Hash } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Globe, Hash, Check } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import QuoteForm from "./QuoteForm";
-import { business } from "@/data/business";
+import { business, credentials } from "@/data/business";
 
 const contactItems = [
   {
@@ -53,7 +53,7 @@ export default function ContactSection() {
         <SectionHeading
           eyebrow="Get in touch"
           title="Request a Quote"
-          intro="Send the details below and Al will get back to you. Prefer to talk? Call any time during working hours."
+          intro="Send the details below and AL will get back to you. Prefer to talk? Call any time during working hours."
           tone="light"
         />
 
@@ -123,8 +123,26 @@ export default function ContactSection() {
               className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3 text-base font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-bright sm:w-auto"
             >
               <Phone className="h-5 w-5" aria-hidden />
-              Call Al — {business.phoneDisplay}
+              Call AL — {business.phoneDisplay}
             </a>
+
+            {/* Why property owners choose AL — credentials (data-driven) */}
+            <div className="mt-8 rounded-xl border border-white/15 bg-white/5 p-6">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
+                Why property owners choose AL
+              </h3>
+              <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {credentials.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-center gap-2.5 text-sm font-semibold text-brand-cream"
+                  >
+                    <Check className="h-4 w-4 shrink-0 text-brand-bright" aria-hidden />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Quote form */}

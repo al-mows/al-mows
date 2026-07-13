@@ -2,7 +2,7 @@ import { Phone, FileText } from "lucide-react";
 import { business } from "@/data/business";
 
 /**
- * Sticky bottom action bar for mobile. Always offers "Call Al" and "Request a
+ * Sticky bottom action bar for mobile. Always offers "Call AL" and "Request a
  * Quote". Hidden on md+ where the header actions are visible. A spacer in the
  * page prevents it from covering the footer.
  */
@@ -15,7 +15,7 @@ export default function MobileActionBar() {
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-brand-bright px-3 py-2.5 text-sm font-bold uppercase text-brand-bright"
         >
           <Phone className="h-4 w-4" aria-hidden />
-          Call Al
+          Call AL
         </a>
         <a
           href="#quote"

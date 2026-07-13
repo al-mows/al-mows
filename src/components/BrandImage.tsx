@@ -32,7 +32,7 @@ export default function BrandImage({
       >
         <div className="px-4 text-center">
           <span className="block text-xs font-semibold uppercase tracking-widest text-brand-bright">
-            Al Mows Blocks
+            AL Mows Blocks
           </span>
           <span className="mt-1 block text-sm text-brand-sand">
             {placeholderLabel}

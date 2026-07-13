@@ -2,7 +2,7 @@ import Image from "next/image";
 import { business } from "@/data/business";
 
 /**
- * The Al Mows Blocks logo lockup. Uses the supplied logo artwork
+ * The AL Mows Blocks logo lockup. Uses the supplied logo artwork
  * (public/images/al-mows-logo.png). The business name is always present as
  * real HTML text alongside the mark, so the information is never image-only.
  */

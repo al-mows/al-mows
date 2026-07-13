@@ -9,7 +9,7 @@
  */
 
 export const business = {
-  name: "Al Mows Blocks",
+  name: "AL Mows Blocks",
   serviceDescription: "Mowing and Slashing",
   owner: "Allan",
 
@@ -47,6 +47,23 @@ export const business = {
 
 /**
  * ---------------------------------------------------------------------------
+ * CREDENTIALS / TRUST POINTS
+ * ---------------------------------------------------------------------------
+ * Owner: these are shown in the hero, the "Why property owners choose AL"
+ * panel and the footer. Only list claims that are true and current — remove
+ * any that no longer apply.
+ */
+export const credentials = [
+  "Locally owned & operated",
+  "Fully insured",
+  "National Police Clearance",
+  "Domestic & commercial",
+  "Rural acreage",
+  "Direct contact with AL",
+];
+
+/**
+ * ---------------------------------------------------------------------------
  * HERO COPY
  * ---------------------------------------------------------------------------
  * Owner: this is the first thing visitors read. Update as needed.
@@ -61,6 +78,8 @@ export const hero = {
   secondaryCta: "CALL 0432 225 363",
   trustSignals: [
     "Locally owned and operated",
+    "Fully insured",
+    "National Police Clearance",
     "Direct contact with the owner",
     "Residential blocks to rural acreage",
     "Servicing the Copper Coast and Yorke Peninsula",
@@ -77,8 +96,8 @@ export const hero = {
 export const businessDescription = {
   heading: "HOW AL CAN HELP",
   paragraphs: [
-    "Al Mows Blocks provides practical mowing and slashing services for residential blocks, vacant land, lifestyle properties, paddocks and larger rural acreage. Every property is different, so the work is assessed according to block size, vegetation growth, terrain, access, travel and the equipment required.",
-    "Contact Al directly to discuss the property, job location and current land condition. Photos can be supplied with the enquiry to assist with the initial assessment.",
+    "AL Mows Blocks provides practical mowing and slashing services for residential blocks, vacant land, lifestyle properties, paddocks and larger rural acreage. Every property is different, so the work is assessed according to block size, vegetation growth, terrain, access, travel and the equipment required.",
+    "Contact AL directly to discuss the property, job location and current land condition. Photos can be supplied with the enquiry to assist with the initial assessment.",
   ],
 } as const;
 
@@ -105,7 +124,7 @@ export const serviceAreas = {
     "Tickera",
     "Arthurton",
   ],
-  note: "Not sure whether your property is within the service area? Send the job address through the quote form and Al can confirm availability and any applicable travel cost.",
+  note: "Not sure whether your property is within the service area? Send the job address through the quote form and AL can confirm availability and any applicable travel cost.",
 } as const;
 
 /**

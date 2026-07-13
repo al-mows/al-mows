@@ -11,7 +11,7 @@ import { business } from "@/data/business";
 export default function BrandBanner() {
   return (
     <section
-      aria-label="Al Mows Blocks signage"
+      aria-label="AL Mows Blocks signage"
       className="border-t-[6px] border-brand-orange bg-brand-black py-10 sm:py-12"
     >
       <div className="mx-auto max-w-content px-4 sm:px-6">

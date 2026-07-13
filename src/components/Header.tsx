@@ -74,7 +74,7 @@ export default function Header() {
         <div className="flex items-center gap-1 md:hidden">
           <a
             href={business.phoneLink}
-            aria-label={`Call Al on ${business.phoneDisplay}`}
+            aria-label={`Call AL on ${business.phoneDisplay}`}
             className="inline-flex h-11 w-11 items-center justify-center rounded-md text-white hover:bg-white/10"
           >
             <Phone className="h-5 w-5" aria-hidden />

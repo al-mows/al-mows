@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Generates the browser-tab favicon in the Al Mows Blocks brand colours.
+// Generates the browser-tab favicon in the AL Mows Blocks brand colours.
 // This guarantees a valid favicon even before the logo PNG is supplied.
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";

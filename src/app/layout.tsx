@@ -18,9 +18,9 @@ const inter = Inter({
 
 const SITE_URL = business.website;
 const TITLE =
-  "Al Mows Blocks | Mowing and Paddock Slashing | Copper Coast & Yorke Peninsula";
+  "AL Mows Blocks | Mowing and Paddock Slashing | Copper Coast & Yorke Peninsula";
 const DESCRIPTION =
-  "Local mowing, block slashing and paddock slashing across Kadina, Moonta, Wallaroo, the Copper Coast and Yorke Peninsula. Contact Al Mows Blocks for a quote.";
+  "Local mowing, block slashing and paddock slashing across Kadina, Moonta, Wallaroo, the Copper Coast and Yorke Peninsula. Contact AL Mows Blocks for a quote.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

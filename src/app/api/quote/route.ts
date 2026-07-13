@@ -21,7 +21,7 @@ import { business } from "@/data/business";
 // Node runtime is required for Buffer + Resend.
 export const runtime = "nodejs";
 
-const FAILURE_MESSAGE = `Your request could not be sent. Please call Al on ${business.phoneDisplay}.`;
+const FAILURE_MESSAGE = `Your request could not be sent. Please call AL on ${business.phoneDisplay}.`;
 
 // Cap the total request body to guard against oversized uploads.
 const MAX_TOTAL_BYTES = MAX_FILES * MAX_FILE_BYTES + 512 * 1024;
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         success: false,
-        message: `Too many requests. Please wait a moment and try again, or call Al on ${business.phoneDisplay}.`,
+        message: `Too many requests. Please wait a moment and try again, or call AL on ${business.phoneDisplay}.`,
       },
       { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } },
     );
