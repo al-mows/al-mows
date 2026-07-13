@@ -10,22 +10,39 @@ export default function Logo({
   className = "",
   variant = "dark",
   showText = true,
+  size = "md",
 }: {
   className?: string;
   variant?: "dark" | "light";
   showText?: boolean;
+  size?: "md" | "lg";
 }) {
   const textColor = variant === "dark" ? "text-white" : "text-brand-black";
   const subColor = variant === "dark" ? "text-brand-sand" : "text-brand-brown";
 
+  const markSize =
+    size === "lg"
+      ? "h-10 w-10 sm:h-14 sm:w-14"
+      : "h-11 w-11 sm:h-12 sm:w-12";
+  const nameSize =
+    size === "lg"
+      ? "text-sm sm:text-xl xl:text-2xl 2xl:text-3xl"
+      : "text-lg sm:text-xl";
+  const subSize =
+    size === "lg"
+      ? "text-[10px] tracking-[0.1em] sm:text-sm sm:tracking-[0.2em]"
+      : "text-[11px] tracking-[0.2em]";
+
   return (
-    <span className={`flex items-center gap-3 ${className}`}>
-      <span className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-md bg-brand-black sm:h-12 sm:w-12">
+    <span className={`flex items-center gap-2 sm:gap-4 ${className}`}>
+      <span
+        className={`relative block shrink-0 overflow-hidden rounded-md bg-brand-black ${markSize}`}
+      >
         <Image
           src="/images/al-mows-logo.png"
           alt={`${business.name} logo`}
           fill
-          sizes="48px"
+          sizes="56px"
           className="object-contain p-1"
           priority
         />
@@ -33,13 +50,13 @@ export default function Logo({
       {showText && (
         <span className="leading-none">
           <span
-            className={`block font-heading text-lg font-700 uppercase tracking-wide ${textColor} sm:text-xl`}
+            className={`block font-heading font-bold uppercase tracking-wide ${textColor} ${nameSize}`}
             style={{ fontWeight: 700 }}
           >
             {business.name}
           </span>
           <span
-            className={`block text-[11px] font-medium uppercase tracking-[0.2em] ${subColor}`}
+            className={`mt-1 block font-medium uppercase ${subColor} ${subSize}`}
           >
             {business.serviceDescription}
           </span>

@@ -21,7 +21,7 @@
   html {
     scroll-behavior: smooth;
     /* Offset in-page anchors so the sticky header does not cover section tops. */
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6.5rem;
   }
 
   body {

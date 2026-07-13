@@ -30,21 +30,21 @@ export default function Header() {
           : "bg-brand-black"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px]">
+      <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8 2xl:px-12">
         <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
-          <Logo variant="dark" />
+          <Logo variant="dark" size="lg" />
         </a>
 
-        {/* Desktop navigation */}
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-1 lg:gap-2">
+        {/* Desktop navigation (wide screens only; hamburger below xl) */}
+        <nav aria-label="Primary" className="hidden xl:block">
+          <ul className="flex items-center gap-6 2xl:gap-10">
             {navigation
               .filter((n) => !n.emphasised)
               .map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-wide text-brand-cream transition-colors hover:text-brand-bright"
+                    className="whitespace-nowrap rounded-md py-2 text-sm font-semibold uppercase tracking-wide text-brand-cream transition-colors hover:text-brand-bright 2xl:text-base"
                   >
                     {item.label}
                   </a>
@@ -53,25 +53,25 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Desktop actions */}
-        <div className="hidden items-center gap-3 md:flex">
+        {/* Desktop actions (right-justified) */}
+        <div className="hidden items-center gap-4 xl:flex 2xl:gap-6">
           <a
             href={business.phoneLink}
-            className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-bold text-white transition-colors hover:text-brand-bright"
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-lg font-bold text-white transition-colors hover:text-brand-bright 2xl:text-xl"
           >
-            <Phone className="h-4 w-4" aria-hidden />
+            <Phone className="h-5 w-5 2xl:h-6 2xl:w-6" aria-hidden />
             {business.phoneDisplay}
           </a>
           <a
             href="#quote"
-            className="inline-flex items-center rounded-md bg-brand-orange px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright"
+            className="inline-flex items-center whitespace-nowrap rounded-md bg-brand-orange px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright 2xl:text-base"
           >
             Request a Quote
           </a>
         </div>
 
-        {/* Mobile actions */}
-        <div className="flex items-center gap-1 md:hidden">
+        {/* Compact actions (below xl) */}
+        <div className="flex items-center gap-1 xl:hidden">
           <a
             href={business.phoneLink}
             aria-label={`Call AL on ${business.phoneDisplay}`}
