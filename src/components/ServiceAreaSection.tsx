@@ -4,25 +4,6 @@ import SectionHeading from "./SectionHeading";
 import SectionBackground from "./SectionBackground";
 import { serviceAreas } from "@/data/business";
 
-/** Simplified Australia outline (with Tasmania) for the tagline card. */
-function AustraliaMark({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 56"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.4}
-      strokeLinejoin="round"
-      strokeLinecap="round"
-      className={className}
-      aria-hidden
-    >
-      <path d="M8 27 L10 18 L16 15 L21 17 L24 11 L28 17 L33 15 L36 18 L41 9 L45 18 L53 18 L59 25 L56 32 L49 36 L44 33 L40 38 L34 35 L27 38 L19 34 L12 31 Z" />
-      <path d="M40 43 a2.6 2.6 0 1 0 0.1 0 Z" />
-    </svg>
-  );
-}
-
 export default function ServiceAreaSection() {
   return (
     <section
@@ -52,14 +33,14 @@ export default function ServiceAreaSection() {
               ))}
             </ul>
 
-            <div className="mt-8 inline-flex items-center gap-5 rounded-2xl border border-brand-orange/40 bg-brand-black/80 p-6 backdrop-blur-sm">
-              <AustraliaMark className="h-14 w-14 shrink-0 text-brand-orange" />
-              <p className="font-heading text-lg font-bold uppercase leading-tight tracking-wide sm:text-xl">
-                <span className="block text-brand-orange">Local knowledge.</span>
-                <span className="block text-brand-orange">Regional focus.</span>
-                <span className="block text-white">Reliable service.</span>
-              </p>
-            </div>
+            <Image
+              src="/images/local-knowledge.png"
+              alt="Local knowledge. Regional focus. Reliable service."
+              width={1774}
+              height={887}
+              sizes="(max-width: 1024px) 90vw, 40vw"
+              className="mt-8 h-auto w-full max-w-md rounded-2xl"
+            />
           </div>
 
           {/* Right: illustrated service-area map */}
