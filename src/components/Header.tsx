@@ -32,15 +32,18 @@ export default function Header() {
       }`}
     >
       <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8 2xl:px-10">
-        {/* Left group: logo, nav, phone and Request a Quote all sit together */}
-        <div className="flex items-center gap-4 xl:gap-5 2xl:gap-7">
-          <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
-            <Logo variant="dark" size="lg" />
-          </a>
+        {/* Logo — far left */}
+        <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
+          <Logo variant="dark" size="lg" />
+        </a>
 
-          {/* Desktop navigation (wide screens only; hamburger below xl) */}
-          <nav aria-label="Primary" className="hidden xl:block">
-            <ul className="flex items-center gap-5 2xl:gap-7">
+        {/* Right cluster: nav, phone, Request a Quote, then the TAJJPI credit.
+            justify-between pushes this to the right, leaving a wide gap after
+            the logo. */}
+        <div className="hidden items-center xl:flex">
+          {/* Desktop navigation */}
+          <nav aria-label="Primary">
+            <ul className="flex items-center gap-5 2xl:gap-8">
               {navigation
                 .filter((n) => !n.emphasised)
                 .map((item) => (
@@ -56,8 +59,8 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Desktop actions */}
-          <div className="hidden items-center gap-3 xl:flex 2xl:gap-4">
+          {/* Phone + Request a Quote — extra space before them */}
+          <div className="ml-7 flex items-center gap-4 2xl:ml-12">
             <a
               href={business.phoneLink}
               className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-base font-bold text-white transition-colors hover:text-brand-bright 2xl:text-lg"
@@ -72,29 +75,29 @@ export default function Header() {
               Request a Quote
             </a>
           </div>
-        </div>
 
-        {/* Right: "Website by" TAJJPI credit, links to tajjpi.com.au */}
-        <a
-          href="https://www.tajjpi.com.au"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Website by TAJJPI — visit tajjpi.com.au"
-          className="hidden shrink-0 flex-col items-center gap-1 xl:flex"
-        >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
-            Website by
-          </span>
-          <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
-            <Image
-              src="/images/TAJJPI.png"
-              alt="TAJJPI"
-              fill
-              sizes="56px"
-              className="object-contain"
-            />
-          </span>
-        </a>
+          {/* TAJJPI credit — only a small gap after the quote button */}
+          <a
+            href="https://www.tajjpi.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Website by TAJJPI — visit tajjpi.com.au"
+            className="ml-3 flex shrink-0 flex-col items-center gap-1 2xl:ml-4"
+          >
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
+              Website by
+            </span>
+            <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
+              <Image
+                src="/images/TAJJPI.png"
+                alt="TAJJPI"
+                fill
+                sizes="56px"
+                className="object-contain"
+              />
+            </span>
+          </a>
+        </div>
 
         {/* Compact actions (below xl) */}
         <div className="flex items-center gap-1 xl:hidden">
