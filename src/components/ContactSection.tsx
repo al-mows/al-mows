@@ -143,6 +143,19 @@ export default function ContactSection() {
                 ))}
               </ul>
             </div>
+
+            {/* Owl mascot with the branded ute — fills the space below the
+                credentials panel. */}
+            <div className="mt-8 overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src="/images/waving.png"
+                alt={`${business.name} mascot waving beside the branded ute`}
+                width={1536}
+                height={1024}
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="h-auto w-full"
+              />
+            </div>
           </div>
 
           {/* Quote form */}
