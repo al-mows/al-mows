@@ -35,11 +35,11 @@ export const services: Service[] = [
     icon: "tractor",
   },
   {
-    id: "property-clean-ups",
-    title: "Property Clean-Ups",
+    id: "residential-lawn-mowing",
+    title: "Residential Lawn Mowing",
     description:
-      "Seasonal mowing and vegetation reduction before sale, inspection, property use or higher-risk fire weather periods.",
-    icon: "sprout",
+      "Regular or one-off mowing for house yards and residential blocks, keeping lawns tidy, accessible and well presented.",
+    icon: "home",
   },
   {
     id: "rural-acreage",
@@ -49,11 +49,11 @@ export const services: Service[] = [
     icon: "land",
   },
   {
-    id: "pre-sale-presentation",
-    title: "Pre-Sale Property Presentation",
+    id: "property-clean-ups",
+    title: "Property Clean-Ups",
     description:
-      "Improve the appearance and accessibility of overgrown properties before listing, inspection or handover.",
-    icon: "home",
+      "Seasonal mowing and vegetation reduction before sale, inspection, property use or higher-risk fire weather periods.",
+    icon: "sprout",
   },
   {
     id: "recurring-maintenance",
