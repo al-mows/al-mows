@@ -7,7 +7,7 @@ export default function ServiceAreaSection() {
   return (
     <section
       id="service-areas"
-      className="relative isolate scroll-mt-20 bg-brand-charcoal py-16 sm:py-20 lg:py-24"
+      className="relative isolate flex min-h-svh scroll-mt-20 flex-col justify-center bg-brand-charcoal py-16 sm:py-20 lg:py-24"
     >
       <SectionBackground src="/images/ocean.png" objectPosition="center" />
       <div className="mx-auto max-w-content px-4 sm:px-6">
