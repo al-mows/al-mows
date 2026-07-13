@@ -62,7 +62,7 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-4xl text-sm leading-relaxed text-brand-cream/80">
+        <p className="text-shadow-photo mt-8 max-w-4xl text-sm leading-relaxed text-brand-cream">
           <span className="font-semibold text-brand-bright">*</span> {pricingDisclaimer}
         </p>
 

@@ -52,6 +52,13 @@
     text-wrap: balance;
   }
 
+  /* Legibility for light text sitting directly over a photo background. */
+  .text-shadow-photo {
+    text-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.6),
+      0 1px 3px rgba(0, 0, 0, 0.65);
+  }
+
   /* Diagonal warning-stripe accent lifted from the trailer/business-card art. */
   .brand-stripes {
     background-image: repeating-linear-gradient(

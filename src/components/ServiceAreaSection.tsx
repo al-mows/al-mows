@@ -67,7 +67,7 @@ export default function ServiceAreaSection() {
           </div>
         </div>
 
-        <p className="mt-10 max-w-3xl rounded-xl border-l-4 border-brand-orange bg-brand-black/60 p-5 text-base leading-relaxed text-brand-cream/90">
+        <p className="mt-10 max-w-3xl rounded-xl border-l-4 border-brand-orange bg-brand-black/75 p-5 text-base leading-relaxed text-brand-cream backdrop-blur-sm">
           {serviceAreas.note}
         </p>
       </div>

@@ -11,7 +11,9 @@ import Image from "next/image";
 export default function SectionBackground({
   src,
   objectPosition = "center",
-  overlay = "linear-gradient(rgba(9,9,9,0.82), rgba(9,9,9,0.86))",
+  // Lighter overlay so the photo shows through; darker at the very top where
+  // section headings sit, easing to a light wash over the cards below.
+  overlay = "linear-gradient(rgba(9,9,9,0.6) 0%, rgba(9,9,9,0.4) 22%, rgba(9,9,9,0.38) 100%)",
 }: {
   src: string;
   objectPosition?: string;

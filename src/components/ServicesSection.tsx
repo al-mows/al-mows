@@ -58,7 +58,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        <p className="mt-8 max-w-3xl text-sm italic leading-relaxed text-brand-cream/80">
+        <p className="text-shadow-photo mt-8 max-w-3xl text-sm italic leading-relaxed text-brand-cream">
           {servicesQualifier}
         </p>
 
