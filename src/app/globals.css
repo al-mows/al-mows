@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   AL MOWS BLOCKS — global styles + brand tokens
+   =========================================================================== */
+:root {
+  --brand-orange: #e85a00;
+  --brand-bright: #ff7200;
+  --brand-black: #090909;
+  --brand-charcoal: #171717;
+  --brand-cream: #fff7e8;
+  --brand-sand: #e8c78f;
+  --brand-brown: #6f6456;
+  --brand-white: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset in-page anchors so the sticky header does not cover section tops. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--brand-white);
+    color: var(--brand-charcoal);
+    font-family: var(--font-body), Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), Oswald, Impact, sans-serif;
+  }
+
+  /* Visible focus states for keyboard users. */
+  :focus-visible {
+    outline: 3px solid var(--brand-bright);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Diagonal warning-stripe accent lifted from the trailer/business-card art. */
+  .brand-stripes {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--brand-bright) 0,
+      var(--brand-bright) 14px,
+      var(--brand-black) 14px,
+      var(--brand-black) 28px
+    );
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
