@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import SectionBackground from "./SectionBackground";
 import {
   services,
   servicesHeading,
@@ -27,9 +28,13 @@ const iconMap: Record<Service["icon"], LucideIcon> = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-20 bg-brand-cream py-16 sm:py-20 lg:py-24">
+    <section
+      id="services"
+      className="relative isolate scroll-mt-20 bg-brand-black py-16 sm:py-20 lg:py-24"
+    >
+      <SectionBackground src="/images/mowing.png" objectPosition="center" />
       <div className="mx-auto max-w-content px-4 sm:px-6">
-        <SectionHeading eyebrow="Services" title={servicesHeading} />
+        <SectionHeading eyebrow="Services" title={servicesHeading} tone="light" />
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -53,12 +58,12 @@ export default function ServicesSection() {
           })}
         </div>
 
-        <p className="mt-8 max-w-3xl text-sm italic leading-relaxed text-brand-brown">
+        <p className="mt-8 max-w-3xl text-sm italic leading-relaxed text-brand-cream/80">
           {servicesQualifier}
         </p>
 
         {/* HOW AL CAN HELP — owner-editable description (src/data/business.ts) */}
-        <div className="mt-14 rounded-2xl bg-brand-black p-8 text-brand-cream sm:p-10">
+        <div className="mt-14 rounded-2xl bg-brand-black/80 p-8 text-brand-cream ring-1 ring-white/10 backdrop-blur-sm sm:p-10">
           <span className="h-1.5 w-14 rounded-full bg-brand-orange" aria-hidden />
           <h3 className="mt-4 font-heading text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
             {businessDescription.heading}

@@ -1,15 +1,21 @@
 import { Check, Handshake } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import SectionBackground from "./SectionBackground";
 import { pricingHeading, pricingTiers, pricingDisclaimer } from "@/data/pricing";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="scroll-mt-20 bg-brand-cream py-16 sm:py-20 lg:py-24">
+    <section
+      id="pricing"
+      className="relative isolate scroll-mt-20 bg-brand-black py-16 sm:py-20 lg:py-24"
+    >
+      <SectionBackground src="/images/horses.png" objectPosition="center" />
       <div className="mx-auto max-w-content px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Guide pricing"
+          eyebrow="Pricing guide"
           title={pricingHeading}
           intro="A starting guide for block slashing. Every job is confirmed with a proper quote — see the note below."
+          tone="light"
         />
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -56,8 +62,8 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-4xl text-sm leading-relaxed text-brand-brown">
-          <span className="font-semibold text-brand-black">*</span> {pricingDisclaimer}
+        <p className="mt-8 max-w-4xl text-sm leading-relaxed text-brand-cream/80">
+          <span className="font-semibold text-brand-bright">*</span> {pricingDisclaimer}
         </p>
 
         <div className="mt-8">

@@ -1,13 +1,15 @@
 import { MapPin } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import SectionBackground from "./SectionBackground";
 import { serviceAreas } from "@/data/business";
 
 export default function ServiceAreaSection() {
   return (
     <section
       id="service-areas"
-      className="scroll-mt-20 bg-brand-charcoal py-16 sm:py-20 lg:py-24"
+      className="relative isolate scroll-mt-20 bg-brand-charcoal py-16 sm:py-20 lg:py-24"
     >
+      <SectionBackground src="/images/ocean.png" objectPosition="center" />
       <div className="mx-auto max-w-content px-4 sm:px-6">
         <SectionHeading
           eyebrow="Where we work"
