@@ -32,70 +32,65 @@ export default function Header() {
       }`}
     >
       <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8 2xl:px-10">
-        {/* Group A: logo — far left */}
+        {/* Logo — far left */}
         <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
           <Logo variant="dark" size="lg" />
         </a>
 
-        {/* Group B: nav + phone + Request a Quote. Centred by justify-between,
-            so the logo→Home gap equals the Quote→TAJJPI gap. The Photos→phone
-            gap is preserved via the large margin before the actions. */}
-        <div className="hidden items-center xl:flex">
-          <nav aria-label="Primary">
-            <ul className="flex items-center gap-5 2xl:gap-7">
-              {navigation
-                .filter((n) => !n.emphasised)
-                .map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="whitespace-nowrap rounded-md py-2 text-sm font-semibold uppercase tracking-wide text-brand-cream transition-colors hover:text-brand-bright 2xl:text-base"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </nav>
+        {/* Nav — centred between the logo and the phone (via justify-between) */}
+        <nav aria-label="Primary" className="hidden xl:block">
+          <ul className="flex items-center gap-5 2xl:gap-7">
+            {navigation
+              .filter((n) => !n.emphasised)
+              .map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="whitespace-nowrap rounded-md py-2 text-sm font-semibold uppercase tracking-wide text-brand-cream transition-colors hover:text-brand-bright 2xl:text-base"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </nav>
 
-          <div className="ml-16 flex items-center gap-4 2xl:ml-80">
-            <a
-              href={business.phoneLink}
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-base font-bold text-white transition-colors hover:text-brand-bright 2xl:text-lg"
-            >
-              <Phone className="h-5 w-5" aria-hidden />
-              {business.phoneDisplay}
-            </a>
-            <a
-              href="#quote"
-              className="inline-flex items-center whitespace-nowrap rounded-md bg-brand-orange px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright"
-            >
-              Request a Quote
-            </a>
-          </div>
+        {/* Phone + Request a Quote + TAJJPI credit — grouped on the right */}
+        <div className="hidden items-center gap-4 xl:flex 2xl:gap-5">
+          <a
+            href={business.phoneLink}
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-base font-bold text-white transition-colors hover:text-brand-bright 2xl:text-lg"
+          >
+            <Phone className="h-5 w-5" aria-hidden />
+            {business.phoneDisplay}
+          </a>
+          <a
+            href="#quote"
+            className="inline-flex items-center whitespace-nowrap rounded-md bg-brand-orange px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright"
+          >
+            Request a Quote
+          </a>
+          <a
+            href="https://www.tajjpi.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Website by TAJJPI — visit tajjpi.com.au"
+            className="flex shrink-0 flex-col items-center gap-1"
+          >
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
+              Website by
+            </span>
+            <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
+              <Image
+                src="/images/TAJJPI.png"
+                alt="TAJJPI"
+                fill
+                sizes="56px"
+                className="object-contain"
+              />
+            </span>
+          </a>
         </div>
-
-        {/* Group C: "Website by" TAJJPI credit — far right */}
-        <a
-          href="https://www.tajjpi.com.au"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Website by TAJJPI — visit tajjpi.com.au"
-          className="hidden shrink-0 flex-col items-center gap-1 xl:flex"
-        >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
-            Website by
-          </span>
-          <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
-            <Image
-              src="/images/TAJJPI.png"
-              alt="TAJJPI"
-              fill
-              sizes="56px"
-              className="object-contain"
-            />
-          </span>
-        </a>
 
         {/* Compact actions (below xl) */}
         <div className="flex items-center gap-1 xl:hidden">
