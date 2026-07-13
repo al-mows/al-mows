@@ -15,8 +15,12 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <Hero />
-        <TrustStrip />
+        {/* Hero + trust strip together fill the first viewport so the orange
+            strip sits flush at the bottom of the screen on load. */}
+        <div className="flex min-h-svh flex-col">
+          <Hero />
+          <TrustStrip />
+        </div>
         <ServicesSection />
         <ServiceAreaSection />
         <PricingSection />

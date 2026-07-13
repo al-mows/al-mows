@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden border-b-[6px] border-brand-orange bg-brand-black"
+      className="relative isolate flex flex-1 flex-col justify-center overflow-hidden border-b-[6px] border-brand-orange bg-brand-black"
     >
       {/* Background artwork (Facebook banner). Decorative — the heading text
           below carries the information, so alt is empty. */}
@@ -50,7 +50,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-content px-4 pb-20 pt-28 sm:px-6 sm:pt-32 lg:pb-28 lg:pt-40">
+      <div className="mx-auto w-full max-w-content px-4 pb-16 pt-28 sm:px-6 sm:pt-32 lg:py-24">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-bright sm:text-sm">
             {hero.eyebrow}
