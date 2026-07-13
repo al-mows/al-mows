@@ -32,18 +32,15 @@ export default function Header() {
       }`}
     >
       <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8 2xl:px-10">
-        {/* Logo — far left */}
-        <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
-          <Logo variant="dark" size="lg" />
-        </a>
+        {/* Group A: logo + nav (kept together on the left) */}
+        <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
+          <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
+            <Logo variant="dark" size="lg" />
+          </a>
 
-        {/* Right cluster: nav, phone, Request a Quote, then the TAJJPI credit.
-            justify-between pushes this to the right, leaving a wide gap after
-            the logo. */}
-        <div className="hidden items-center xl:flex">
           {/* Desktop navigation */}
-          <nav aria-label="Primary">
-            <ul className="flex items-center gap-5 2xl:gap-8">
+          <nav aria-label="Primary" className="hidden xl:block">
+            <ul className="flex items-center gap-5 2xl:gap-7">
               {navigation
                 .filter((n) => !n.emphasised)
                 .map((item) => (
@@ -58,46 +55,46 @@ export default function Header() {
                 ))}
             </ul>
           </nav>
+        </div>
 
-          {/* Phone + Request a Quote — extra space before them */}
-          <div className="ml-7 flex items-center gap-4 2xl:ml-12">
-            <a
-              href={business.phoneLink}
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-base font-bold text-white transition-colors hover:text-brand-bright 2xl:text-lg"
-            >
-              <Phone className="h-5 w-5" aria-hidden />
-              {business.phoneDisplay}
-            </a>
-            <a
-              href="#quote"
-              className="inline-flex items-center whitespace-nowrap rounded-md bg-brand-orange px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright"
-            >
-              Request a Quote
-            </a>
-          </div>
-
-          {/* TAJJPI credit — only a small gap after the quote button */}
+        {/* Group B: phone + Request a Quote (centre; wide gaps either side) */}
+        <div className="hidden items-center gap-4 xl:flex">
           <a
-            href="https://www.tajjpi.com.au"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Website by TAJJPI — visit tajjpi.com.au"
-            className="ml-3 flex shrink-0 flex-col items-center gap-1 2xl:ml-4"
+            href={business.phoneLink}
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-md py-2 text-base font-bold text-white transition-colors hover:text-brand-bright 2xl:text-lg"
           >
-            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
-              Website by
-            </span>
-            <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
-              <Image
-                src="/images/TAJJPI.png"
-                alt="TAJJPI"
-                fill
-                sizes="56px"
-                className="object-contain"
-              />
-            </span>
+            <Phone className="h-5 w-5" aria-hidden />
+            {business.phoneDisplay}
+          </a>
+          <a
+            href="#quote"
+            className="inline-flex items-center whitespace-nowrap rounded-md bg-brand-orange px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright"
+          >
+            Request a Quote
           </a>
         </div>
+
+        {/* Group C: "Website by" TAJJPI credit — far right */}
+        <a
+          href="https://www.tajjpi.com.au"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Website by TAJJPI — visit tajjpi.com.au"
+          className="hidden shrink-0 flex-col items-center gap-1 xl:flex"
+        >
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
+            Website by
+          </span>
+          <span className="relative block h-14 w-14 overflow-hidden rounded-md ring-1 ring-white/15 transition-transform hover:scale-105">
+            <Image
+              src="/images/TAJJPI.png"
+              alt="TAJJPI"
+              fill
+              sizes="56px"
+              className="object-contain"
+            />
+          </span>
+        </a>
 
         {/* Compact actions (below xl) */}
         <div className="flex items-center gap-1 xl:hidden">
