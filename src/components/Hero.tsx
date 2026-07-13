@@ -23,13 +23,13 @@ export default function Hero() {
           below carries the information, so alt is empty. */}
       <div className="absolute inset-0 -z-10">
         <BrandImage
-          src="/images/al-mows-facebook-banner.png"
+          src="/images/al-mows-hero.png"
           alt=""
           fill
           priority
           sizes="100vw"
           placeholderLabel="Banner image to be added"
-          className="object-cover object-[58%_center]"
+          className="object-cover object-[82%_center]"
         />
         {/* Directional dark gradient: nearly opaque on the left for text
             legibility, clearing on the right so the artwork shows through. */}
