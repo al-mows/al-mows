@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { X, Phone } from "lucide-react";
 import { navigation, business } from "@/data/business";
 
@@ -92,6 +93,22 @@ export default function MobileNavigation({
           >
             <Phone className="h-5 w-5" aria-hidden />
             Call AL — {business.phoneDisplay}
+          </a>
+
+          <a
+            href="https://www.tajjpi.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            aria-label="Website by TAJJPI — visit tajjpi.com.au"
+            className="mt-5 flex flex-col items-center gap-1"
+          >
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-sand">
+              Website by
+            </span>
+            <span className="relative block h-12 w-12 overflow-hidden rounded-md ring-1 ring-white/15">
+              <Image src="/images/TAJJPI.png" alt="TAJJPI" fill sizes="48px" className="object-contain" />
+            </span>
           </a>
         </div>
       </nav>

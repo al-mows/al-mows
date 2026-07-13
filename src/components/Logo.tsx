@@ -26,7 +26,7 @@ export default function Logo({
       : "h-11 w-11 sm:h-12 sm:w-12";
   const nameSize =
     size === "lg"
-      ? "text-sm sm:text-xl xl:text-2xl 2xl:text-3xl"
+      ? "text-sm sm:text-xl 2xl:text-2xl"
       : "text-lg sm:text-xl";
   const subSize =
     size === "lg"
