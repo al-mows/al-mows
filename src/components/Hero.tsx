@@ -50,49 +50,51 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-content px-4 pb-16 pt-28 sm:px-6 sm:pt-32 lg:py-24">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-bright sm:text-sm">
+      {/* Left padding steps up on wide screens so the text lines up under the
+          "M" in MOWS in the header wordmark. */}
+      <div className="w-full px-6 pb-16 pt-28 sm:pt-32 lg:py-24 lg:pl-32 lg:pr-10 xl:pl-[8.5rem] 2xl:pl-40">
+        <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-5xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-bright sm:text-base lg:text-lg">
             {hero.eyebrow}
           </p>
 
-          <h1 className="mt-4 font-heading text-4xl font-bold uppercase leading-[0.95] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-heading text-5xl font-bold uppercase leading-[0.9] text-white sm:text-7xl lg:text-8xl 2xl:text-9xl">
             <span className="block">{hero.headingLine1}</span>
             <span className="block text-brand-bright">{hero.headingLine2}</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-brand-cream/90 sm:text-lg">
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-brand-cream/90 sm:text-xl lg:text-2xl">
             {hero.supporting}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href="#quote"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3 text-base font-bold uppercase tracking-wide text-white shadow-lg transition-colors hover:bg-brand-bright"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-md bg-brand-orange px-8 py-4 text-lg font-bold uppercase tracking-wide text-white shadow-lg transition-colors hover:bg-brand-bright"
             >
               {hero.primaryCta}
-              <ArrowRight className="h-5 w-5" aria-hidden />
+              <ArrowRight className="h-6 w-6" aria-hidden />
             </a>
             <a
               href={business.phoneLink}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-white/80 px-6 py-3 text-base font-bold uppercase tracking-wide text-white transition-colors hover:border-brand-bright hover:text-brand-bright"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-md border-2 border-white/80 px-8 py-4 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:border-brand-bright hover:text-brand-bright"
             >
-              <Phone className="h-5 w-5" aria-hidden />
+              <Phone className="h-6 w-6" aria-hidden />
               {hero.secondaryCta}
             </a>
           </div>
 
           {/* Trust signals */}
-          <ul className="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+          <ul className="mt-11 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             {hero.trustSignals.map((signal, i) => {
               const Icon = trustIcons[i % trustIcons.length];
               return (
                 <li
                   key={signal}
-                  className="flex items-center gap-2.5 text-sm font-medium text-brand-cream"
+                  className="flex items-center gap-3 text-base font-medium text-brand-cream lg:text-lg"
                 >
-                  <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-orange/20 text-brand-bright">
-                    <Icon className="h-4 w-4" aria-hidden />
+                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-orange/20 text-brand-bright">
+                    <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   {signal}
                 </li>
