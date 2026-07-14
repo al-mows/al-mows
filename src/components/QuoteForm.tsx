@@ -303,7 +303,7 @@ export default function QuoteForm() {
           </button>
           <input
             ref={fileInputRef}
-            id="photos"
+            id="quote-photos"
             name="photos"
             type="file"
             multiple

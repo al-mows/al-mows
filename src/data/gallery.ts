@@ -6,8 +6,8 @@
  *
  * HOW TO ADD A PROJECT
  * 1. Drop the two photos into `public/images/gallery/`, e.g.
- *      public/images/gallery/project-1-before.jpg
- *      public/images/gallery/project-1-after.jpg
+ *      public/images/gallery/project-1-before.png
+ *      public/images/gallery/project-1-after.png
  * 2. Add or edit an entry below with the matching paths.
  * 3. If an image path is missing on disk, the gallery shows a labelled
  *    placeholder panel instead of a broken image — so it is safe to add
@@ -36,32 +36,32 @@ export const galleryIntro =
 export const galleryProjects: GalleryProject[] = [
   {
     id: "project-1",
-    title: "Vacant block slashing",
-    location: "Kadina",
+    title: "Block Slashing",
+    location: "Residential block",
     size: "Approximate area to be confirmed",
     description:
-      "Before-and-after images will be added following completion of the project.",
-    beforeImage: "/images/gallery/project-1-before.jpg",
-    afterImage: "/images/gallery/project-1-after.jpg",
+      "Clearing an overgrown residential block back to a tidy, accessible lawn.",
+    beforeImage: "/images/gallery/project-1-before.png",
+    afterImage: "/images/gallery/project-1-after.png",
   },
   {
     id: "project-2",
-    title: "Paddock slashing",
+    title: "Paddock Slashing",
     location: "Yorke Peninsula",
     size: "Approximate area to be confirmed",
     description:
-      "Before-and-after images will be added following completion of the project.",
-    beforeImage: "/images/gallery/project-2-before.jpg",
-    afterImage: "/images/gallery/project-2-after.jpg",
+      "Slashing overgrown paddock ready for the season, subject to terrain and access.",
+    beforeImage: "/images/gallery/project-2-before.png",
+    afterImage: "/images/gallery/project-2-after.png",
   },
   {
     id: "project-3",
-    title: "Pre-sale property clean-up",
-    location: "Moonta",
+    title: "Residential Lawn Mowing",
+    location: "Copper Coast",
     size: "Approximate area to be confirmed",
     description:
-      "Before-and-after images will be added following completion of the project.",
-    beforeImage: "/images/gallery/project-3-before.jpg",
-    afterImage: "/images/gallery/project-3-after.jpg",
+      "A regular house-yard mow, keeping the lawn and verge tidy and presentable.",
+    beforeImage: "/images/gallery/project-3-before.png",
+    afterImage: "/images/gallery/project-3-after.png",
   },
 ];
