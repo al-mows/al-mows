@@ -293,13 +293,14 @@ export default function QuoteForm() {
           JPG, PNG or WEBP. Up to {MAX_FILES} files, max {MAX_FILE_MB} MB each.
         </p>
         <div className="mt-2">
-          <label
-            htmlFor="photos"
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
             className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-md border-2 border-dashed border-brand-sand bg-brand-cream px-4 py-2.5 text-sm font-semibold text-brand-black transition-colors hover:border-brand-orange"
           >
             <Upload className="h-4 w-4" aria-hidden />
             Add photos
-          </label>
+          </button>
           <input
             ref={fileInputRef}
             id="photos"
@@ -307,6 +308,7 @@ export default function QuoteForm() {
             type="file"
             multiple
             accept={ACCEPT_ATTRIBUTE}
+            aria-label="Add photos"
             onChange={(e) => {
               handleFiles(e.target.files);
               // Allow re-selecting the same file after removal.
