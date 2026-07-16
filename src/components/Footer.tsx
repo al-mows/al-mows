@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone, Mail, MapPin, Facebook, Globe } from "lucide-react";
 import Logo from "./Logo";
 import { business, navigation, credentials } from "@/data/business";
@@ -95,6 +96,23 @@ export default function Footer() {
           <p className="mt-2 text-xs text-brand-sand">
             © {year} {business.name}. All rights reserved.
           </p>
+          <a
+            href="https://www.tajjpi.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 text-xs text-brand-cream/70 transition-colors hover:text-brand-bright"
+          >
+            Website by TAJJPI
+            <span className="relative block h-5 w-5 shrink-0 overflow-hidden rounded">
+              <Image
+                src="/images/TAJJPI.png"
+                alt="TAJJPI"
+                fill
+                sizes="20px"
+                className="object-contain"
+              />
+            </span>
+          </a>
         </div>
       </div>
     </footer>
