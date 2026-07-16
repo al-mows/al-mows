@@ -60,23 +60,13 @@ export function buildAcknowledgementBodies(data: QuoteInput) {
     </div>
     <div style="padding:24px;">
       <p style="font-size:16px; margin:0 0 14px;">Hi ${esc(firstName)},</p>
+      <p style="line-height:1.6; margin:0 0 14px;">Thank you for your enquiry.</p>
+      <p style="line-height:1.6; margin:0 0 14px;">AL will be in contact with you as soon as he can.</p>
       <p style="line-height:1.6; margin:0 0 14px;">
-        Thanks for your enquiry — we've received your request and AL will get back to you as soon as possible.
+        We ensure that all enquiries are responded to and we aim to meet your needs and exceed your expectations.
       </p>
-      <p style="line-height:1.6; margin:0 0 14px;">
-        If it's urgent, you're welcome to call AL directly on
-        <a href="tel:0432225363" style="color:#E85A00; font-weight:bold; text-decoration:none;">${esc(business.phoneDisplay)}</a>.
-      </p>
-      <div style="background:#FFF7E8; border-left:4px solid #E85A00; padding:12px 16px; margin:18px 0;">
-        <p style="margin:0; font-size:13px; color:#6F6456;">A copy of your enquiry:</p>
-        <p style="margin:8px 0 0; line-height:1.6;">
-          <strong>Job site:</strong> ${esc(data.jobAddress)}<br>
-          <strong>Details:</strong> ${escMultiline(data.message)}
-        </p>
-      </div>
-      <p style="line-height:1.6; margin:0 0 6px;">Talk soon,<br><strong>AL Mows Blocks</strong></p>
+      <p style="line-height:1.6; margin:18px 0 0;"><strong>AL Mows Blocks</strong></p>
       <p style="font-size:12px; color:#6F6456; margin:16px 0 0;">
-        ${esc(business.valuesLine)}<br>
         ${esc(business.phoneDisplay)} &nbsp;•&nbsp; ${esc(business.email)}
       </p>
     </div>
@@ -88,16 +78,13 @@ export function buildAcknowledgementBodies(data: QuoteInput) {
   const text = [
     `Hi ${firstName},`,
     "",
-    "Thanks for your enquiry — we've received your request and AL will get back to you as soon as possible.",
+    "Thank you for your enquiry.",
     "",
-    `If it's urgent, call AL directly on ${business.phoneDisplay}.`,
+    "AL will be in contact with you as soon as he can.",
     "",
-    `Job site: ${data.jobAddress}`,
-    `Details: ${data.message}`,
+    "We ensure that all enquiries are responded to and we aim to meet your needs and exceed your expectations.",
     "",
-    "Talk soon,",
     "AL Mows Blocks",
-    business.valuesLine,
     `${business.phoneDisplay} • ${business.email}`,
     "",
     "This is an automated acknowledgement of your enquiry.",
