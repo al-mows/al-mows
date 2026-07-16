@@ -24,17 +24,29 @@ export default function Logo({
     size === "lg"
       ? "h-10 w-10 sm:h-14 sm:w-14"
       : "h-11 w-11 sm:h-12 sm:w-12";
+  // "lg" (header) wordmark scales up aggressively — it is the dominant visual
+  // in the header, anchored to the top of the header's height (see the
+  // h-full + justify-between column below), with the subtitle pinned to the
+  // bottom edge.
   const nameSize =
     size === "lg"
-      ? "text-sm sm:text-xl 2xl:text-2xl"
+      ? "text-base sm:text-2xl lg:text-4xl 2xl:text-5xl"
       : "text-lg sm:text-xl";
   const subSize =
     size === "lg"
-      ? "text-[10px] tracking-[0.1em] sm:text-sm sm:tracking-[0.2em]"
+      ? "text-[9px] tracking-[0.1em] sm:text-xs sm:tracking-[0.2em] lg:text-sm"
       : "text-[11px] tracking-[0.2em]";
 
+  // Only the header's "lg" wordmark stretches to fill a fixed-height parent
+  // (name pinned top, subtitle pinned bottom). The default "md" lockup (used
+  // in the footer and contact section) keeps its original compact stack.
+  const outerHeight = size === "lg" ? "h-full" : "";
+  const textStack =
+    size === "lg" ? "flex h-full flex-col justify-between py-1" : "leading-none";
+  const subMargin = size === "lg" ? "" : "mt-1";
+
   return (
-    <span className={`flex items-center gap-2 sm:gap-4 ${className}`}>
+    <span className={`flex items-center gap-2 sm:gap-4 ${outerHeight} ${className}`}>
       <span
         className={`relative block shrink-0 overflow-hidden rounded-md bg-brand-black ${markSize}`}
       >
@@ -48,15 +60,15 @@ export default function Logo({
         />
       </span>
       {showText && (
-        <span className="leading-none">
+        <span className={textStack}>
           <span
-            className={`block font-heading font-bold uppercase tracking-wide ${textColor} ${nameSize}`}
+            className={`block font-heading font-bold uppercase leading-none tracking-wide ${textColor} ${nameSize}`}
             style={{ fontWeight: 700 }}
           >
             {business.name}
           </span>
           <span
-            className={`mt-1 block font-medium uppercase ${subColor} ${subSize}`}
+            className={`block font-medium uppercase leading-none ${subColor} ${subSize} ${subMargin}`}
           >
             {business.serviceDescription}
           </span>

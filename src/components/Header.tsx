@@ -32,8 +32,13 @@ export default function Header() {
       }`}
     >
       <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8 2xl:px-10">
-        {/* Logo — far left */}
-        <a href="#home" className="shrink-0" aria-label={`${business.name} — home`}>
+        {/* Logo — far left. h-full lets the wordmark inside stretch to fill
+            the fixed header height (name pinned top, subtitle pinned bottom). */}
+        <a
+          href="#home"
+          className="flex h-full shrink-0 items-center"
+          aria-label={`${business.name} — home`}
+        >
           <Logo variant="dark" size="lg" />
         </a>
 
