@@ -30,7 +30,7 @@ export default function Logo({
   // bottom edge.
   const nameSize =
     size === "lg"
-      ? "text-lg min-[400px]:text-2xl min-[400px]:whitespace-nowrap sm:text-3xl lg:text-4xl 2xl:text-5xl"
+      ? "text-lg whitespace-nowrap min-[360px]:text-[23px] min-[412px]:text-[28px] sm:text-3xl lg:text-4xl 2xl:text-5xl"
       : "text-lg sm:text-xl";
   const subSize =
     size === "lg"
