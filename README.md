@@ -78,6 +78,36 @@ Do **not** hard-code business details inside components.
 | Pricing tiers + disclaimer              | `src/data/pricing.ts`       |
 | Before/after gallery projects           | `src/data/gallery.ts`       |
 
+### Making edits without any coding tools (for Al — no developer needed)
+
+This site is plain code, not a CMS with an admin panel, but small text and
+photo changes can be made directly on **github.com** in a web browser — no
+software to install, no Claude or ChatGPT required.
+
+1. Go to the repository on github.com and sign in.
+2. **To change text or numbers** (pricing, phone number, service wording,
+   etc.): open the relevant file (see the table above), click the pencil
+   ("Edit this file") icon in the top right, make the change, then scroll
+   down and click **"Commit changes"**. Only edit the text *between the
+   quote marks* — don't touch commas, brackets, or the quote marks
+   themselves, or the site will fail to build.
+3. **To swap or add photos**: browse to the folder (e.g.
+   `public/images/gallery/`), click **"Add file" → "Upload files"**, drag
+   the new photo in, and commit. To *replace* an existing photo, upload a
+   file with the exact same name (e.g. `project-1-before.png`) — GitHub
+   will overwrite it automatically.
+4. Every commit automatically triggers a new live deployment on Vercel —
+   the change appears on **almowsblocks.com.au** within about a minute.
+   Refresh the site after committing to confirm it went live.
+5. If something looks broken after an edit, open the commit you just made
+   on GitHub and click **"Revert"** — this undoes the change and
+   redeploys the previous working version.
+
+Small, careful edits (a price, a phone number, a sentence) are low-risk.
+Editing the layout/structure of a file is easy to get wrong — for anything
+beyond simple text or photo swaps, come back to an AI coding assistant or a
+developer.
+
 ### Updating pricing
 
 Open `src/data/pricing.ts`. The `$0.00` figures are **placeholders** flagged with
