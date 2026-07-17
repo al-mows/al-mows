@@ -61,17 +61,7 @@ export const galleryProjects: GalleryProject[] = [
     size: "Approximate area to be confirmed",
     description:
       "A regular house-yard mow, keeping the lawn and verge tidy and presentable.",
-    beforeImage: "/images/gallery/project-3-before.png",
-    afterImage: "/images/gallery/project-3-after.png",
-  },
-  {
-    id: "project-4",
-    title: "Driveway Lawn Circle Mow",
-    location: "Residential property",
-    size: "Approximate area to be confirmed",
-    description:
-      "A tidy mow and edge of a feature lawn circle at a property entrance.",
-    beforeImage: "/images/gallery/project-4-before.jpeg",
-    afterImage: "/images/gallery/project-4-after.jpeg",
+    beforeImage: "/images/gallery/project-3-before.jpeg",
+    afterImage: "/images/gallery/project-3-after.jpeg",
   },
 ];
