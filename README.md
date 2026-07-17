@@ -110,9 +110,7 @@ developer.
 
 ### Updating pricing
 
-Open `src/data/pricing.ts`. The `$0.00` figures are **placeholders** flagged with
-`// PLACEHOLDER` comments. Replace the `price` string on each tier with real
-guide pricing before launch.
+Open `src/data/pricing.ts` and change the `price` string on the relevant tier.
 
 ### Adding gallery images
 
@@ -158,16 +156,17 @@ is always valid.
 
 ## Launch checklist
 
-- [ ] Replace all `$0.00` pricing placeholders in `src/data/pricing.ts`.
+- [x] Replace all `$0.00` pricing placeholders in `src/data/pricing.ts`.
+- [x] Add real before-and-after photos to `public/images/gallery/`.
+- [x] Copy the brand images into `public/images/`.
+- [x] Configure `RESEND_API_KEY` in Vercel.
+- [x] Verify the sending domain in Resend and set `QUOTE_FROM_EMAIL`.
+- [x] Test enquiry delivery to `al.mows@outlook.com` (enquiry + auto-reply both confirmed).
+- [x] Test the mobile layout (320px, 375px, 430px).
+- [x] Run a final production build (`npm run build`).
 - [ ] Confirm the exact owner name spelling ("Allan").
 - [ ] Confirm the service descriptions in `src/data/services.ts`.
-- [ ] Add real before-and-after photos to `public/images/gallery/`.
-- [ ] Copy the four brand images into `public/images/`.
-- [ ] Configure `RESEND_API_KEY` in Vercel.
-- [ ] Verify the sending domain in Resend and set `QUOTE_FROM_EMAIL`.
-- [ ] Test enquiry delivery to `al.mows@outlook.com`.
-- [ ] Test the mobile layout (320px, 375px, 430px).
-- [ ] Confirm the Facebook link (`facebook.com/AlMowsBlocks`).
+- [ ] Confirm the Facebook link (`facebook.com/AlMowsBlocks`) is a real, public page.
 - [ ] Confirm the ABN (`91 670 594 606`).
 - [ ] Add a privacy policy page if legally required.
-- [ ] Run a final production build (`npm run build`).
+- [ ] Point almowsblocks.com.au at the Vercel deployment.

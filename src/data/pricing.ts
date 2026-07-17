@@ -2,12 +2,6 @@
  * ===========================================================================
  * AL MOWS BLOCKS — BLOCK SLASHING PRICING GUIDE
  * ===========================================================================
- * ⚠️  LAUNCH BLOCKER — UPDATE BEFORE GOING LIVE  ⚠️
- *
- * The `$0.00` figures below are EDITABLE PLACEHOLDERS. Replace every one with
- * real guide pricing before the site is launched. Do not present guide
- * pricing as a binding quote.
- *
  * To update: change the `price` string on each tier. Use "Can be negotiated"
  * (or similar) for tiers without a fixed figure.
  * ===========================================================================
@@ -16,7 +10,7 @@
 export type PricingTier = {
   id: string;
   label: string;
-  /** Displayed price string. PLACEHOLDER "From $0.00*" — replace before launch. */
+  /** Displayed price string, e.g. "From $240*". */
   price: string;
   /** Optional smaller note under the price. */
   note?: string;
@@ -30,27 +24,23 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "acre-1",
     label: "1 Acre",
-    // PLACEHOLDER — replace $0.00 before launch
-    price: "From $0.00*",
+    price: "From $240*",
     note: "Minimum charge",
   },
   {
     id: "acre-2",
     label: "2 Acres",
-    // PLACEHOLDER — replace $0.00 before launch
-    price: "From $0.00*",
+    price: "From $310*",
   },
   {
     id: "acre-3",
     label: "3 Acres",
-    // PLACEHOLDER — replace $0.00 before launch
-    price: "From $0.00*",
+    price: "From $380*",
   },
   {
     id: "acre-4",
     label: "4 Acres",
-    // PLACEHOLDER — replace $0.00 before launch
-    price: "From $0.00*",
+    price: "From $450*",
   },
   {
     id: "acre-4-plus",
