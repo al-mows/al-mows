@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Oswald, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { business, serviceAreas } from "@/data/business";
+
+// Google Analytics measurement ID — not a secret, safe to commit. Allan can
+// be added as a free "Viewer" on this GA4 property at analytics.google.com.
+const GA_MEASUREMENT_ID = "G-8JQX9ZRNQR";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -158,6 +163,18 @@ export default function RootLayout({
         <LocalBusinessJsonLd />
         {children}
         <Analytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
