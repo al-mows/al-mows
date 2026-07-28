@@ -51,8 +51,8 @@ export const galleryProjects: GalleryProject[] = [
     size: "Approximate area to be confirmed",
     description:
       "Slashing overgrown paddock ready for the season, subject to terrain and access.",
-    beforeImage: "/images/gallery/project-2-before.png",
-    afterImage: "/images/gallery/project-2-after.png",
+    beforeImage: "/images/gallery/project-2-before.jpg",
+    afterImage: "/images/gallery/project-2-after.jpg",
   },
   {
     id: "project-3",
