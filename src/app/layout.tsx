@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { business, serviceAreas } from "@/data/business";
@@ -156,6 +157,7 @@ export default function RootLayout({
       <body className="bg-white text-brand-charcoal antialiased">
         <LocalBusinessJsonLd />
         {children}
+        <Analytics />
       </body>
     </html>
   );
