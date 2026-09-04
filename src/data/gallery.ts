@@ -62,8 +62,14 @@ export const galleryProjects: GalleryProject[] = [
     size: "Approximate area to be confirmed",
     description:
       "Clearing an overgrown residential block back to a tidy, accessible lawn.",
-    beforeImages: ["/images/gallery/project-1-before.png"],
-    afterImages: ["/images/gallery/project-1-after.png"],
+    beforeImages: [
+      "/images/gallery/project-1-before.png",
+      "/images/gallery/project-1-before-2.jpg",
+    ],
+    afterImages: [
+      "/images/gallery/project-1-after.png",
+      "/images/gallery/project-1-after-2.jpg",
+    ],
   },
   {
     id: "project-2",
@@ -72,8 +78,16 @@ export const galleryProjects: GalleryProject[] = [
     size: "Approximate area to be confirmed",
     description:
       "Slashing overgrown paddock ready for the season, subject to terrain and access.",
-    beforeImages: ["/images/gallery/project-2-before.jpg"],
-    afterImages: ["/images/gallery/project-2-after.jpg"],
+    beforeImages: [
+      "/images/gallery/project-2-before.jpg",
+      "/images/gallery/project-2-before-2.jpg",
+      "/images/gallery/project-2-before-3.jpg",
+    ],
+    afterImages: [
+      "/images/gallery/project-2-after.jpg",
+      "/images/gallery/project-2-after-2.jpg",
+      "/images/gallery/project-2-after-3.jpg",
+    ],
   },
   {
     id: "project-3",
