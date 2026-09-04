@@ -119,6 +119,12 @@ Open `src/data/pricing.ts` and change the `price` string on the relevant tier.
 2. Add or edit the matching entry in `src/data/gallery.ts`.
 3. Missing images show a labelled placeholder rather than a broken image, so
    entries can be added before the photos exist.
+4. A project isn't limited to one before/after photo — `beforeImages` and
+   `afterImages` are each a list, so you can add more angles of the same job
+   by adding more photos to both lists in matching order. See the
+   "ADDING MORE THAN ONE BEFORE/AFTER PHOTO" note at the top of
+   `src/data/gallery.ts` for the exact format. Visitors get arrows to flip
+   between photo pairs.
 
 ## Brand image assets
 

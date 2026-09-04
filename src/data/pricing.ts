@@ -24,23 +24,23 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "acre-1",
     label: "1 Acre",
-    price: "From $240*",
+    price: "From $260*",
     note: "Minimum charge",
   },
   {
     id: "acre-2",
     label: "2 Acres",
-    price: "From $310*",
+    price: "From $330*",
   },
   {
     id: "acre-3",
     label: "3 Acres",
-    price: "From $380*",
+    price: "From $400*",
   },
   {
     id: "acre-4",
     label: "4 Acres",
-    price: "From $450*",
+    price: "From $480*",
   },
   {
     id: "acre-4-plus",

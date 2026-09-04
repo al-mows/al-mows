@@ -20,8 +20,8 @@ export default function BeforeAfterGallery() {
               className="flex flex-col overflow-hidden rounded-xl border border-brand-sand/60 bg-brand-cream shadow-card"
             >
               <BeforeAfterSlider
-                beforeImage={project.beforeImage}
-                afterImage={project.afterImage}
+                beforeImages={project.beforeImages}
+                afterImages={project.afterImages}
                 title={project.title}
               />
               <div className="flex flex-1 flex-col p-5">
@@ -47,8 +47,9 @@ export default function BeforeAfterGallery() {
         </div>
 
         <p className="mt-8 text-sm italic text-brand-brown">
-          Drag the slider on any project to compare the before and after. New
-          project photos are added as jobs are completed.
+          Drag the slider on any project to compare the before and after —
+          use the arrows under a project with more than one photo to see
+          other angles. New project photos are added as jobs are completed.
         </p>
       </div>
     </section>
