@@ -65,10 +65,14 @@ export const galleryProjects: GalleryProject[] = [
     beforeImages: [
       "/images/gallery/project-1-before.png",
       "/images/gallery/project-1-before-2.jpg",
+      "/images/gallery/project-1-before-3.jpg",
+      "/images/gallery/project-1-before-4.jpg",
     ],
     afterImages: [
       "/images/gallery/project-1-after.png",
       "/images/gallery/project-1-after-2.jpg",
+      "/images/gallery/project-1-after-3.jpg",
+      "/images/gallery/project-1-after-4.jpg",
     ],
   },
   {
