@@ -46,7 +46,7 @@ export default function BeforeAfterGallery() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm italic text-brand-brown">
+        <p className="mt-8 text-base italic text-brand-brown sm:text-lg">
           Drag the slider on any project to compare the before and after —
           use the arrows under a project with more than one photo to see
           other angles. New project photos are added as jobs are completed.
