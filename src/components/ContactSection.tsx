@@ -58,8 +58,11 @@ export default function ContactSection() {
         />
 
         <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
-          {/* Contact details */}
-          <div>
+          {/* Contact details — shown second on mobile so the quote form
+              (the primary action) appears first without scrolling past
+              the logo, credentials and mascot image. Desktop keeps the
+              original left/right order via lg:order. */}
+          <div className="order-2 lg:order-1">
             <div className="flex items-center gap-4">
               <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-brand-charcoal">
                 <Image
@@ -159,7 +162,7 @@ export default function ContactSection() {
           </div>
 
           {/* Quote form */}
-          <div>
+          <div className="order-1 lg:order-2">
             <QuoteForm />
           </div>
         </div>
