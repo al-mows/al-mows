@@ -5,11 +5,13 @@ import { Loader2, CheckCircle2, AlertTriangle, Phone, Upload, X } from "lucide-r
 import {
   quoteSchema,
   validateFile,
+  validateFileType,
   MAX_FILES,
   MAX_FILE_MB,
   ACCEPT_ATTRIBUTE,
   MESSAGE_MIN,
 } from "@/lib/validation";
+import { compressImageFile } from "@/lib/imageCompression";
 import { business } from "@/data/business";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -34,6 +36,7 @@ export default function QuoteForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [files, setFiles] = useState<File[]>([]);
   const [fileError, setFileError] = useState<string | null>(null);
+  const [compressing, setCompressing] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [serverMessage, setServerMessage] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -49,7 +52,7 @@ export default function QuoteForm() {
       setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
     };
 
-  const handleFiles = (list: FileList | null) => {
+  const handleFiles = async (list: FileList | null) => {
     if (!list) return;
     setFileError(null);
     const incoming = Array.from(list);
@@ -59,14 +62,32 @@ export default function QuoteForm() {
       setFileError(`Please attach no more than ${MAX_FILES} photos.`);
       return;
     }
+    // Reject obviously-wrong file types/extensions before spending time
+    // compressing them. Size is checked after compression below — an
+    // oversized original is exactly what compression is meant to fix, so
+    // checking size here would reject it before it gets the chance.
     for (const f of incoming) {
-      const err = validateFile({ name: f.name, type: f.type, size: f.size });
+      const err = validateFileType(f);
       if (err) {
         setFileError(err);
         return;
       }
     }
-    setFiles(combined);
+
+    setCompressing(true);
+    try {
+      const compressed = await Promise.all(incoming.map(compressImageFile));
+      for (const f of compressed) {
+        const err = validateFile({ name: f.name, type: f.type, size: f.size });
+        if (err) {
+          setFileError(err);
+          return;
+        }
+      }
+      setFiles((prev) => [...prev, ...compressed]);
+    } finally {
+      setCompressing(false);
+    }
   };
 
   const removeFile = (index: number) => {
@@ -290,16 +311,27 @@ export default function QuoteForm() {
           Photos <span className="font-normal text-brand-brown">(optional)</span>
         </span>
         <p className="mt-1 text-xs text-brand-brown">
-          JPG, PNG or WEBP. Up to {MAX_FILES} files, max {MAX_FILE_MB} MB each.
+          JPG, PNG or WEBP. Up to {MAX_FILES} files, max {MAX_FILE_MB} MB each
+          — photos are automatically resized before sending.
         </p>
         <div className="mt-2">
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-md border-2 border-dashed border-brand-sand bg-brand-cream px-4 py-2.5 text-sm font-semibold text-brand-black transition-colors hover:border-brand-orange"
+            disabled={compressing}
+            className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-md border-2 border-dashed border-brand-sand bg-brand-cream px-4 py-2.5 text-sm font-semibold text-brand-black transition-colors hover:border-brand-orange disabled:cursor-not-allowed disabled:opacity-70"
           >
-            <Upload className="h-4 w-4" aria-hidden />
-            Add photos
+            {compressing ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                Preparing photos…
+              </>
+            ) : (
+              <>
+                <Upload className="h-4 w-4" aria-hidden />
+                Add photos
+              </>
+            )}
           </button>
           <input
             ref={fileInputRef}
@@ -310,7 +342,7 @@ export default function QuoteForm() {
             accept={ACCEPT_ATTRIBUTE}
             aria-label="Add photos"
             onChange={(e) => {
-              handleFiles(e.target.files);
+              void handleFiles(e.target.files);
               // Allow re-selecting the same file after removal.
               if (fileInputRef.current) fileInputRef.current.value = "";
             }}
@@ -371,7 +403,7 @@ export default function QuoteForm() {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
           type="submit"
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || compressing}
           className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-md bg-brand-orange px-6 py-3 text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-brand-bright disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "submitting" ? (

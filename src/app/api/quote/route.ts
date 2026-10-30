@@ -23,8 +23,15 @@ export const runtime = "nodejs";
 
 const FAILURE_MESSAGE = `Your request could not be sent. Please call AL on ${business.phoneDisplay}.`;
 
-// Cap the total request body to guard against oversized uploads.
-const MAX_TOTAL_BYTES = MAX_FILES * MAX_FILE_BYTES + 512 * 1024;
+// Cap the total request body to guard against oversized uploads. Vercel
+// Serverless Functions enforce their own hard request-body limit (well
+// below what MAX_FILES * MAX_FILE_BYTES alone would allow) — a request over
+// that ceiling never reaches this code at all, it's rejected by the
+// platform first. The client compresses photos before upload so real
+// submissions stay well under this, but this check still gives a clear,
+// specific error for anything that reaches us oversized (e.g. a direct API
+// call bypassing the form) instead of a confusing platform-level failure.
+const MAX_TOTAL_BYTES = 4 * 1024 * 1024;
 
 function getClientIp(req: Request): string {
   const fwd = req.headers.get("x-forwarded-for");

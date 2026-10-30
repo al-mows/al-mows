@@ -84,19 +84,33 @@ export const quoteSchema = z.object({
 export type QuoteInput = z.infer<typeof quoteSchema>;
 
 /**
- * Validate a single uploaded file. Returns an error string, or null if valid.
+ * Validate just the type/extension of an uploaded file. Split out from
+ * `validateFile` so the client can reject the wrong kind of file immediately,
+ * before spending time compressing it — size is checked separately, after
+ * compression, since compression is what brings an oversized original down
+ * to something acceptable.
  */
-export function validateFile(file: {
-  name: string;
-  type: string;
-  size: number;
-}): string | null {
+export function validateFileType(file: { name: string; type: string }): string | null {
   const typeOk = (ACCEPTED_IMAGE_TYPES as readonly string[]).includes(file.type);
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
   const extOk = (ACCEPTED_IMAGE_EXTENSIONS as readonly string[]).includes(ext);
   if (!typeOk && !extOk) {
     return `"${file.name}" is not an accepted image type. Use JPG, PNG or WEBP.`;
   }
+  return null;
+}
+
+/**
+ * Validate a single uploaded file (type + size). Returns an error string, or
+ * null if valid.
+ */
+export function validateFile(file: {
+  name: string;
+  type: string;
+  size: number;
+}): string | null {
+  const typeErr = validateFileType(file);
+  if (typeErr) return typeErr;
   if (file.size > MAX_FILE_BYTES) {
     return `"${file.name}" is larger than ${MAX_FILE_MB} MB.`;
   }
